@@ -32,10 +32,13 @@ void calculator(void)
         for(int j = 0; j < cols; j++)
         {
             if((j == 0 || j == cols - 1) && i >= 1 ||
-               (i == 2 && j == 2))
+               (i == 2 && j == 2) || (i == 3 && j == 2) ||
+               (i == 2 && j == cols - 3) || (i == 3 && j == cols - 3) ||
+               (i >= 5 && i <= rows - 3) && (j >= 2 && j <= cols - 3) && (j == 2 || j == 6 || j == 10 || j == 14 || j == 16 || j == 20))
                 printf("|");
             else if((i == 0 || i == rows - 1) && (j >= 1 && j < cols - 1) ||
-                    (i >= 1 && j >= 3 && j < cols - 3) && (i == 1 || i == 3))
+                    (i >= 1 && j >= 3 && j < cols - 3) && (i == 1 || i == 3) ||
+                    (i >= 4 && ((j >= 3 && j < 14) || (j >= 17 && j < cols - 3)) && (i == 4 || i == 6 || i == 8 || i == 10)))
                 printf("_");
             else
                 printf(" ");
